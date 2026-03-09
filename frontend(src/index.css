@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #070A0F;
+  --panel: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.1);
+  --text-muted: rgba(255,255,255,0.65);
+  --primary-red: #C7000B;
+}
+
+body {
+  background: var(--bg-main);
+  color: white;
+  font-family: Inter, system-ui, sans-serif;
+}
+/* Accessibility styles */
+:root {
+  --color-primary: #C7000B;
+  --line-height: 1.5;
+  --text-align: left;
+}
+
+/* High contrast mode */
+.high-contrast {
+  filter: contrast(1.5);
+}
+
+.high-contrast button,
+.high-contrast input,
+.high-contrast select {
+  border: 2px solid white !important;
+}
+
+/* Reduced motion */
+.reduced-motion * {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+}
+
+/* Dyslexic font */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/otf/OpenDyslexic-Regular.otf') format('opentype');
+}
+
+.dyslexic-font {
+  font-family: 'OpenDyslexic', sans-serif !important;
+}
+
+/* Light mode */
+.light-mode {
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.light-mode .bg-\[\#070A0F\] {
+  background-color: #f5f5f5 !important;
+}
+
+.light-mode .text-white {
+  color: #1a1a1a !important;
+}
+
+.light-mode .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode .bg-black\/25 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Reading guide */
+.show-reading-guide {
+  position: relative;
+}
+
+.show-reading-guide::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.5em;
+  background-color: rgba(255, 255, 0, 0.2);
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Focus indicator */
+.focus-indicator *:focus {
+  outline: 3px solid var(--color-primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* Large touch targets */
+.large-touch-targets button,
+.large-touch-targets [role="button"],
+.large-touch-targets input,
+.large-touch-targets select {
+  min-height: 48px !important;
+  min-width: 48px !important;
+  padding: 12px !important;
+}
+
+/* Keyboard navigation */
+.keyboard-navigation *:focus-visible {
+  outline: 3px solid var(--color-primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* Text styles */
+body {
+  line-height: var(--line-height);
+  text-align: var(--text-align);
+}
